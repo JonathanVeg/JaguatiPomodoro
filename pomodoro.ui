@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Pomodoro</class>
+ <widget class="QMainWindow" name="Pomodoro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pomodoro</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Files.qrc">
+    <normaloff>:/imagens/icone</normaloff>:/imagens/icone</iconset>
+  </property>
+  <widget class="QWidget" name="center"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="Files.qrc"/>
+ </resources>
+ <connections/>
+</ui>

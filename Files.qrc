@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/QSS">
+        <file alias="style">Style/red.qss</file>
+    </qresource>
+    <qresource prefix="/imagens">
+        <file alias="bg">Images/background.png</file>
+        <file alias="down">Images/Arrow-down.png</file>
+        <file alias="up">Images/Arrow-up.png</file>
+        <file alias="icone">Images/logo-pomodoro.png</file>
+    </qresource>
+</RCC>
