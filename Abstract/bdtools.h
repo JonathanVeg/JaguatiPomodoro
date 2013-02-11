@@ -11,6 +11,7 @@
 #include <QSqlTableModel>
 #include <QCompleter>
 #include <QSqlRelationalTableModel>
+#include <stdint.h>
 
 typedef unsigned short int usint;
 
