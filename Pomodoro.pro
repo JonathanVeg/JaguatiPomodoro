@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql\
-            webkit
+            webkit \ phonon
 
 TARGET = Pomorodo
 TEMPLATE = app

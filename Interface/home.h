@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QProgressBar>
+#include <QKeyEvent>
 
 class Home : public QWidget
 {
@@ -44,10 +45,12 @@ signals:
     void newTitle(QString title);
 
 public slots:
+    void setTitle(QString title);
     void onClick_pbPlay();
     void onClick_pbStop();
     void onClick_pbRestart();
-    void setTitle(QString title);
+
+    void keyPressEvent(QKeyEvent *event);
 
 private:
 

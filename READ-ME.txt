@@ -1,0 +1,1 @@
+Na pasta sound, tem o som necessário para o funcionamento do sistema. Por o mesmo na pasta de build

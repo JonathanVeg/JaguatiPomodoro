@@ -12,6 +12,7 @@
 #include <Interface/configuration.h>
 #include <Interface/about.h>
 #include <QStackedWidget>
+#include <QKeyEvent>
 
 namespace Ui {
     class Pomodoro;
@@ -59,6 +60,8 @@ private slots:
 
     void trayIconClicked(QSystemTrayIcon::ActivationReason);
 
+    void keyPressEvent(QKeyEvent *event);
+
 private:
 
     enum Occurrence{
@@ -94,7 +97,6 @@ private:
     unsigned int _currentTime;
 
     usint _totalDuration;
-
 };
 
 #endif // POMODORO_H

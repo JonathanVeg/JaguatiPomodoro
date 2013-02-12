@@ -1,6 +1,7 @@
 #include "home.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <windows.h>
 
 Home::Home(QWidget *parent) :
     QWidget(parent)
@@ -131,10 +132,14 @@ void Home::resizeEvent(QResizeEvent *)
 
 void Home::onClick_pbPlay(){
     if (pbPlay->text() == "Play"){
+        //Beep(523, 500);
+
         play();
 
         pbPlay->setText("Pause");
     }else{
+        //Beep(523, 500);
+
         pause();
 
         pbPlay->setText("Play");
@@ -145,6 +150,8 @@ void Home::onClick_pbStop(){
     int op = QMessageBox::question(this, "Stop operation", "Do you really want to stop this process?", "Yes", "No");
 
     if (op == 0){
+        //Beep(523, 500);
+
         stop();
 
         pbPlay->setText("Play");
@@ -234,4 +241,24 @@ void Home::setTitle(QString title)
 {
     emit newTitle(title);
     lTextStatus->setText(title);
+}
+
+void Home::keyPressEvent(QKeyEvent *event)
+{
+    if (event->modifiers() == Qt::ControlModifier)
+    {
+        if (event->key() == Qt::Key_P)
+            onClick_pbPlay();
+
+        if (event->key() == Qt::Key_S)
+            onClick_pbStop();
+
+        if (event->key() == Qt::Key_R)
+            onClick_pbRestart();
+
+        return;
+    }
+
+    if (event->key() == Qt::Key_F2)
+        onClick_pbPlay();
 }

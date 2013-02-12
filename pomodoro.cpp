@@ -3,6 +3,8 @@
 #include <QDebug>
 #include <QFile>
 #include <QMessageBox>
+#include <windows.h>
+#include <QSound>
 
 Pomodoro::Pomodoro(QWidget *parent) :
     QMainWindow(parent),
@@ -130,8 +132,12 @@ void Pomodoro::timer_timeout(){
 
     if (currentTime() == totalDuration())
     {
+        QSound::play("pomodoro_beep.wav");
+
         // aqui eu preciso mudar o modo.
         timer->stop();
+
+        //Beep(523, 500);
 
         if (_occurrence == Pomo){
             if (_currentPomodoro % 4 == 0){
@@ -237,4 +243,23 @@ void Pomodoro::restart()
 void Pomodoro::trayIconClicked(QSystemTrayIcon::ActivationReason)
 {
     this->setVisible(!this->isVisible());
+}
+
+void Pomodoro::keyPressEvent(QKeyEvent *event){
+    if (event->modifiers() == Qt::ControlModifier)
+    {
+        if (event->key() == Qt::Key_P)
+            wHome->onClick_pbPlay();
+
+        if (event->key() == Qt::Key_S)
+            wHome->onClick_pbStop();
+
+        if (event->key() == Qt::Key_R)
+            wHome->onClick_pbRestart();
+
+        return;
+    }
+
+    if (event->key() == Qt::Key_F2)
+        wHome->onClick_pbPlay();
 }
